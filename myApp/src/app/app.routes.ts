@@ -14,4 +14,12 @@ export const routes: Routes = [
     path: 'to-do-list',
     loadComponent: () => import('./to-do-list/to-do-list.page').then( m => m.ToDoListPage)
   },
+  {
+    path: 'calendar',
+    loadComponent: () => import('./calendar/calendar.page').then( m => m.CalendarPage)
+  },
+  {
+    path: 'settings',
+    loadComponent: () => import('./settings/settings.page').then( m => m.SettingsPage)
+  },
 ];
