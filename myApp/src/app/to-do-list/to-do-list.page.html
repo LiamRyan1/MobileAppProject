@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>ToDoList</ion-title>
+    <ion-title>Add Tasks</ion-title>
     <ion-buttons slot="start">
     <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
@@ -13,4 +13,33 @@
       <ion-title size="large">ToDoList</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Task Title</ion-label>
+      <ion-input [(ngModel)]="taskTitle" type="text" placeholder="Enter task title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Priority (1-5)</ion-label>
+      <ion-input [(ngModel)]="priority" type="number" placeholder="Enter priority"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Category</ion-label>
+      <ion-select [(ngModel)]="category" placeholder="Select category">
+        <ion-select-option value="work">Work</ion-select-option>
+        <ion-select-option value="shopping">Shopping</ion-select-option>
+        <ion-select-option value="leisure">Leisure</ion-select-option>
+        <ion-select-option value="family">Family</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Date of Completion</ion-label>
+      <ion-input [(ngModel)]="date" type="date"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Detailed Description</ion-label>
+      <ion-textarea [(ngModel)]="description" placeholder="Enter detailed description"></ion-textarea>
+    </ion-item>
+    <ion-button (click)="addTask()" expand="block" color="primary">Add Task</ion-button>
+  </ion-list>
 </ion-content>
