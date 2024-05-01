@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonSelect, IonSelectOption, IonTextarea, IonTitle, IonToolbar, } from '@ionic/angular/standalone';
-
+import { TaskService } from '../task.service';
 @Component({
   selector: 'app-to-do-list',
   templateUrl: './to-do-list.page.html',
@@ -17,7 +17,7 @@ export class ToDoListPage implements OnInit {
   date:string = "";
   description:string = "";
   tasks: any[] = [];
-  constructor() { }
+  constructor(public taskService: TaskService) { }
 
   ngOnInit() {
   }
@@ -35,8 +35,9 @@ export class ToDoListPage implements OnInit {
       date: this.date,
       description: this.description
     };
-    //push object task to the tasks array
-    this.tasks.push(task);
+    //call the addTask method of taskservice to add the task
+    this.taskService.addTask(task);
+
     //reset back to default for the next task to be added
     this. taskTitle = '';
     this.priority = 0;
