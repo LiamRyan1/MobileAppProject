@@ -8,7 +8,7 @@ import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonInput, 
   templateUrl: './to-do-list.page.html',
   styleUrls: ['./to-do-list.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,IonBackButton,IonButtons,IonItem,IonList,IonLabel,IonInput,IonSelect,IonSelectOption,IonTextarea,IonButton]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,IonBackButton,IonButtons,IonItem,IonList,IonLabel,IonInput,IonSelect,IonSelectOption,IonTextarea,IonButton,IonList]
 })
 export class ToDoListPage implements OnInit {
   taskTitle: string = "";
@@ -37,12 +37,12 @@ export class ToDoListPage implements OnInit {
     };
     //push object task to the tasks array
     this.tasks.push(task);
-    
+    //reset back to default for the next task to be added
     this. taskTitle = '';
     this.priority = 0;
     this.category = '';
     this. date = '';
     this.description = '';
-      alert("task added");
+    alert("task added");
   }
 }
