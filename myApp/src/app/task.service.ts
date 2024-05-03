@@ -8,11 +8,11 @@ export class TaskService {
   //add task to task array
   addTask(task: any) {
     this.tasks.push(task);
-   
+    console.log("Tasks after adding", this.tasks);
   }
    //get tasks array
    getTasks(): any[] {
-     console.log("Tasks after loading:", this.tasks);
+     console.log("Tasks after entering get method:", this.tasks);
     return this.tasks;
   }
 }

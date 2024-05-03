@@ -21,7 +21,7 @@ export class HomePage {
   }
   loadTasks() {
     console.log("Loading tasks...");
-    this.tasks = this.taskService.tasks;
+    this.tasks = this.taskService.getTasks();
     console.log("Tasks after loading:", this.tasks);
   }
 }
