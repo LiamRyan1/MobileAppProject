@@ -15,7 +15,11 @@
 
   <div id="container">
     <h2>Upcoming Events</h2>
-    <p> </p>
+    <ion-list>
+      <ion-item *ngFor="let task of tasks">
+        <ion-label>{{task.title}}</ion-label>
+      </ion-item>
+    </ion-list>
     <h2>Add Tasks</h2>
     <ion-button shape="round" [routerLink]="['/to-do-list']" routerDirection="forward">Add Tasks</ion-button>
     <h2>Calendar</h2>

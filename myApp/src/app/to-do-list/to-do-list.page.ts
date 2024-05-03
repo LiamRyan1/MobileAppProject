@@ -8,6 +8,7 @@ import { TaskService } from '../task.service';
   templateUrl: './to-do-list.page.html',
   styleUrls: ['./to-do-list.page.scss'],
   standalone: true,
+  providers:[TaskService],
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,IonBackButton,IonButtons,IonItem,IonList,IonLabel,IonInput,IonSelect,IonSelectOption,IonTextarea,IonButton,IonList]
 })
 export class ToDoListPage implements OnInit {
@@ -37,7 +38,6 @@ export class ToDoListPage implements OnInit {
     };
     //call the addTask method of taskservice to add the task
     this.taskService.addTask(task);
-
     //reset back to default for the next task to be added
     this. taskTitle = '';
     this.priority = 0;
