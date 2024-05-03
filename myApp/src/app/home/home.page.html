@@ -14,10 +14,11 @@
   </ion-header>
 
   <div id="container">
-    <h2>Upcoming Events</h2>
+    <h2>Urgent Tasks</h2>
     <ion-list>
       <ion-item *ngFor="let task of tasks">
         <ion-label>{{task.title}}</ion-label>
+        <ion-note slot="end">priority:{{ task.priority }}</ion-note>
       </ion-item>
     </ion-list>
     <h2>Add Tasks</h2>

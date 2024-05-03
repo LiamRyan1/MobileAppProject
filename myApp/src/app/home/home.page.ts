@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel, IonButton} from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel, IonButton, IonNote} from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 import { TaskService } from '../task.service';
 import { CommonModule } from '@angular/common';
@@ -9,7 +9,7 @@ import { NavController } from '@ionic/angular/standalone';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent,RouterLink,IonList,IonItem,IonLabel,CommonModule,IonButton],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent,RouterLink,IonList,IonItem,IonLabel,CommonModule,IonButton,IonNote],
 
 })
 export class HomePage {
@@ -22,6 +22,7 @@ export class HomePage {
   loadTasks() {
     console.log("Loading tasks...");
     this.tasks = this.taskService.getTasks();
+    this.tasks.sort((a, b) => b.priority - a.priority );
     console.log("Tasks after loading:", this.tasks);
   }
 }
