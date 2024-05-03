@@ -8,9 +8,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Calendar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-item *ngFor="let holiday of holidays">
+      <ion-label>{{ holiday.title }}</ion-label>
+      <ion-note slot="end">{{ holiday.date }}</ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>
