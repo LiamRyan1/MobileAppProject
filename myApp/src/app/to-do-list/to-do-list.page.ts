@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, importProvidersFrom } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonSelect, IonSelectOption, IonTextarea, IonTitle, IonToolbar, } from '@ionic/angular/standalone';
 import { TaskService } from '../task.service';
+
 @Component({
   selector: 'app-to-do-list',
   templateUrl: './to-do-list.page.html',
   styleUrls: ['./to-do-list.page.scss'],
-  standalone: true,
-  providers:[TaskService],
+  standalone: true, 
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,IonBackButton,IonButtons,IonItem,IonList,IonLabel,IonInput,IonSelect,IonSelectOption,IonTextarea,IonButton,IonList]
 })
 export class ToDoListPage implements OnInit {

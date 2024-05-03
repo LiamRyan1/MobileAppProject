@@ -10,7 +10,7 @@ import { NavController } from '@ionic/angular/standalone';
   styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [IonHeader, IonToolbar, IonTitle, IonContent,RouterLink,IonList,IonItem,IonLabel,CommonModule,IonButton],
-  providers: [TaskService]
+
 })
 export class HomePage {
   tasks: any[] = [];
