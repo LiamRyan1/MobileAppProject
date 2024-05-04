@@ -17,6 +17,7 @@ interface dates {
 export class CalendarPage implements OnInit {
   holidays:any = [];
   tasks: any = [];
+ 
   constructor(private apiService:ApiService ,public taskService: TaskService ,) { }
 
   ngOnInit() {
@@ -44,6 +45,7 @@ export class CalendarPage implements OnInit {
       
       //update holidays array with sorted combined array
       this.holidays =  combineAndSortholidaysTasks;
+      console.log("current holiday array",this.holidays);
     }
   }
 }
