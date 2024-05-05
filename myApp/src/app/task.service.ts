@@ -25,7 +25,7 @@ export class TaskService {
     console.log("Tasks after adding", this.tasks);
   }
    //get tasks array
-   getTasks(): any[] {
+   async getTasks():Promise <any[]> {
      console.log("Tasks after entering get method:", this.tasks);
     return this.tasks;
   }

@@ -15,13 +15,13 @@ import { NavController } from '@ionic/angular/standalone';
 export class HomePage {
   tasks: any[] = [];
   constructor(public taskService: TaskService ,private navCtrl: NavController) {}
-  ionViewWillEnter() {
+ async  ionViewWillEnter() {
     console.log("HomePage initialized");
-    this.loadTasks();
+   await this.loadTasks();
   }
-  loadTasks() {
+  async loadTasks() {
     console.log("Loading tasks...");
-    this.tasks = this.taskService.getTasks();
+    this.tasks =  await this.taskService.getTasks();
     this.tasks.sort((a, b) => b.priority - a.priority );
     console.log("Tasks after loading:", this.tasks);
   }
