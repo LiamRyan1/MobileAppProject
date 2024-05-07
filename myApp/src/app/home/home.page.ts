@@ -21,8 +21,8 @@ export class HomePage {
   }
   async loadTasks() {
     console.log("Loading tasks...");
-    this.tasks =  await this.taskService.getTasks();
-    this.tasks.sort((a, b) => b.priority - a.priority );
+    const tasksCopy =  await this.taskService.getTasks(); //copy the array
+    this.tasks = tasksCopy.sort((a, b) => b.priority - a.priority );//sort copy by priorty
     console.log("Tasks after loading:", this.tasks);
   }
 }

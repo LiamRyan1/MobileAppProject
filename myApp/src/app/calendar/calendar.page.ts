@@ -23,23 +23,25 @@ export class CalendarPage implements OnInit {
   ngOnInit() {
     this.apiService.GetApiData().subscribe((data)=>{
       this.holidays = data['england-and-wales'].events;
-      this. combineAndSortholidaysTasks();
+      this.combineAndSortholidaysTasks();
     });
   }
   ionViewWillEnter() {
     console.log("Calendar initialized");
     this.loadTasks();
   }
-  loadTasks() {
+ async loadTasks() {
     console.log("Loading in calendar tasks...");
-    this.tasks = this.taskService.getTasks();
+    this.tasks = await this.taskService.getTasks();
     console.log("Tasks after loading in calendar:", this.tasks);
+    this.combineAndSortholidaysTasks();
   }
   combineAndSortholidaysTasks() {
     if (this.holidays.length > 0 && this.tasks.length > 0) {
       //combine holidays and tasks arrays
+      console.log("combining holiday array and tasks array");
       const  combineAndSortholidaysTasks = this.holidays.concat(this.tasks);
-      
+      console.log("sorting holiday array and tasks array");
       //sort the combined array by date
       combineAndSortholidaysTasks.sort((a:dates, b:dates) => a.date.localeCompare(b.date));
       
