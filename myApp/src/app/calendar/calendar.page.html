@@ -11,9 +11,9 @@
   <ion-list>
     <ion-item *ngFor="let holiday of holidays">
       <ion-label>{{ holiday.title }}</ion-label>
-      <ion-note *ngIf="holiday.description" > {{ holiday.description }}</ion-note>
+      <ion-note *ngIf="holiday.description" > Description: {{ holiday.description }}</ion-note>
       <div *ngIf="holiday.description && holiday.date" style="margin-top: 8px;margin-left:30px;">&nbsp;</div>
-      <ion-note  slot="end">{{ holiday.date }}</ion-note>
+      <ion-note  slot="end">Date : {{ holiday.date }}</ion-note>
     </ion-item>
   </ion-list>
 </ion-content>

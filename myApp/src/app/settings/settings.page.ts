@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar,IonListHeader,IonList,IonItem,IonToggle,IonRange,IonIcon,IonLabel,IonText,IonButton} from '@ionic/angular/standalone';
 import { Browser } from '@capacitor/browser';
-
+import { TaskService } from '../task.service';
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.page.html',
@@ -13,7 +13,7 @@ import { Browser } from '@capacitor/browser';
 })
 export class SettingsPage implements OnInit {
 
-  constructor() { }
+  constructor(public taskService: TaskService) { }
 
   paletteToggle = false;
 
@@ -48,5 +48,8 @@ export class SettingsPage implements OnInit {
     await Browser.open({ url: 'https://calendar.google.com/calendar/u/0/r'
     });
     };
+    async delete() {
+      await this.taskService.deleteAllTasks(); 
+    }
 }
 

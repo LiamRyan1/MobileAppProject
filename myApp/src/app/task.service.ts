@@ -29,4 +29,9 @@ export class TaskService {
      console.log("Tasks after entering get method:", this.tasks);
     return this.tasks;
   }
+  async deleteAllTasks() {
+    await this.storage.remove('tasks'); 
+    this.tasks = []; 
+    console.log("Tasks cleared");
+  }
 }
