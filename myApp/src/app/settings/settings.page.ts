@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar,IonListHeader,IonList,IonItem,IonToggle,IonRange,IonIcon,IonLabel,IonText} from '@ionic/angular/standalone';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar,IonListHeader,IonList,IonItem,IonToggle,IonRange,IonIcon,IonLabel,IonText,IonButton} from '@ionic/angular/standalone';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.page.html',
   styleUrls: ['./settings.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,IonBackButton,IonButtons,IonListHeader,IonList,IonItem,IonToggle,IonRange,IonIcon,IonLabel,IonText]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,IonBackButton,IonButtons,IonListHeader,IonList,IonItem,IonToggle,IonRange,IonIcon,IonLabel,IonText,IonButton]
 })
 export class SettingsPage implements OnInit {
 
@@ -43,5 +44,9 @@ export class SettingsPage implements OnInit {
   toggleDarkPalette(shouldAdd:any) {
     document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
   }
+  async openBrowser() {
+    await Browser.open({ url: 'https://calendar.google.com/calendar/u/0/r'
+    });
+    };
 }
 
