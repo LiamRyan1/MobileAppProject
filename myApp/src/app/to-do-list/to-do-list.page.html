@@ -45,12 +45,14 @@
   <h1 style="font-weight: bold; text-align: center;">Recently Added Task</h1>
   <ion-list *ngIf="taskService.tasks.length > 0"><!-- print if array size is greater than 0-->
   <ion-item>
+    <div style="display: flex; flex-direction: column;">
     <!--if there is a single entry in the array task length is one but its in position 0 of the array so use task.length-1 to get the correct position in the array for the most recent task-->
-    <ion-label>{{taskService.tasks[taskService.tasks.length - 1].title }}</ion-label>
+    <ion-label style="font-weight: bold;">{{taskService.tasks[taskService.tasks.length - 1].title }}</ion-label>
     <ion-label>Priority: {{ taskService.tasks[taskService.tasks.length - 1].priority }}</ion-label>
     <ion-label>Category: {{ taskService.tasks[taskService.tasks.length - 1].category }}</ion-label>
     <ion-label>Date: {{ taskService.tasks[taskService.tasks.length - 1].date }}</ion-label>
     <ion-label>Description: {{ taskService.tasks[taskService.tasks.length - 1].description }}</ion-label>
+  </div>
   </ion-item>
 </ion-list>
 <ion-label *ngIf="taskService.tasks.length === 0">No tasks added yet.</ion-label><!-- print  if array size is  0-->
