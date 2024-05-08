@@ -42,7 +42,7 @@
     </ion-item>
     <ion-button (click)="addTask()" expand="block" color="primary">Add Task</ion-button>
   </ion-list>
-  <h1>Recently Added Task</h1>
+  <h1 style="font-weight: bold; text-align: center;">Recently Added Task</h1>
   <ion-list *ngIf="taskService.tasks.length > 0"><!-- print if array size is greater than 0-->
   <ion-item>
     <!--if there is a single entry in the array task length is one but its in position 0 of the array so use task.length-1 to get the correct position in the array for the most recent task-->
