@@ -21,5 +21,9 @@ export const routes: Routes = [
   {
     path: 'settings',
     loadComponent: () => import('./settings/settings.page').then( m => m.SettingsPage)
+  },  {
+    path: 'duedate',
+    loadComponent: () => import('./duedate/duedate.page').then( m => m.DuedatePage)
   },
+
 ];

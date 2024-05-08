@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Tasks</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tasks</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <h2 style="text-align: center; font-weight: bold;">Days until due</h2>
+    <ion-list>
+      <ion-item *ngFor="let task of tasks;let i = index">
+        <ion-label >{{task.title}}</ion-label>
+        <ion-note slot="end">Description:   {{ task.description }}</ion-note>
+        <ion-note slot="end">priority:{{ task.priority }}</ion-note>
+        <ion-note slot="end" *ngIf="DaysUntilDue[i] ">Days until due: {{ DaysUntilDue[i] }}</ion-note>
+
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

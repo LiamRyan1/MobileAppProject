@@ -8,21 +8,21 @@
 </ion-header>
 
 <ion-content>
-  <h1>&nbsp;&nbsp;&nbsp;Appearance</h1>
+  <h1 style="font-weight: bold; text-align: center;">Appearance</h1>
   <ion-list [inset]="true">
     <ion-item>
       <ion-toggle [(ngModel)]="paletteToggle" (ionChange)="toggleChange($event)" justify="space-between">Dark Mode</ion-toggle>
     </ion-item>
   </ion-list>
   <div class="container">
-    <h3>&nbsp;&nbsp;&nbsp;Back up your Tasks with other software</h3>
+    <h3 style="font-weight: bold; text-align: center;">Back up your Tasks with other software</h3>
       <div class="center">
         <ion-button (click)="openBrowser()" >Open Google Calandar</ion-button>
       </div>
     </div>
     <div class="container">
       <div class="center">
-        <h3 style="font-weight: bold;">Remove Tasks</h3>
+        <h3 style="font-weight: bold; text-align: center;">Remove Tasks</h3>
       <ion-button (click)=" delete()" color="danger">Clear All Tasks</ion-button>
     </div>
     </div>

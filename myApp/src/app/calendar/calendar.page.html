@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Calendar</ion-title>
+    <ion-title>Event List</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
       </ion-buttons>
@@ -11,8 +11,8 @@
   <ion-list>
     <ion-item *ngFor="let holiday of holidays">
       <ion-label>{{ holiday.title }}</ion-label>
-      <ion-note *ngIf="holiday.description" > Description: {{ holiday.description }}</ion-note>
-      <div *ngIf="holiday.description && holiday.date" style="margin-top: 8px;margin-left:30px;">&nbsp;</div>
+      <ion-note *ngIf="holiday.description" > Category:{{ holiday.category}}</ion-note>
+      <div *ngIf="holiday.description && holiday.date" style="margin-left:30px;">&nbsp;</div>
       <ion-note  slot="end">Date : {{ holiday.date }}</ion-note>
     </ion-item>
   </ion-list>
